@@ -1,0 +1,17 @@
+main {
+  margin: 20px;
+}
+
+.weather-blocks {
+  margin-top: 20px;
+}
+
+.callout {
+  border: none;
+  background: #e6ffff;
+  transition:all 1s ease;
+}
+
+.callout:hover {
+  background: #66ffff;
+}

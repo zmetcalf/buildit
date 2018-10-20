@@ -1,80 +1,43 @@
-# ZURB WebApp Template
+# Buildit
+
+## Front End Engineering Excersise Request
 
 [![devDependency Status](https://david-dm.org/zurb/foundation-zurb-template/dev-status.svg)](https://david-dm.org/zurb/foundation-zurb-template#info=devDependencies)
 
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
 
-This is the official ZURB Template for use with [Foundation for Sites](http://foundation.zurb.com/sites). We use this template at ZURB to deliver static code to our clients. It has a Gulp-powered build system with these features:
+### About this excersise
 
-- Handlebars HTML templates with Panini
-- Sass compilation and prefixing
-- JavaScript module bundling with webpack
-- Built-in BrowserSync server
-- For production builds:
-  - CSS compression
-  - JavaScript compression
-  - Image compression
+#### To Install/Run/Build/Test Page
+* Install - `npm install`
+* Run     - `npm start`
+* Build   - `npm run build`
+* Test    - `npm test`
 
-## Installation
+#### My Thought Process
+I chose to start my project with a project template from
+the Zurb Foundation to expidite the setup process. Also,
+their built in styling helped knockout out some mobile layout
+setup. I added the Vue.js framework to assist in the application
+logic. I used lodash to simplify some of the array and object
+handling. Also, instead of using jQuery's ajax methods or
+legacy XMLHttpRequest functions, I chose to use the new Fetch API.
+When receiving the API, I originally expected a daily high/low;
+however, it produced 3 hour blocks, so I grouped them by
+day of the week and displayed the most pertantent information.
+I also added a very basic location updater input box to change
+the default location from Denver. For a CSS3 transition, I
+added a hover event on each day of the week.
 
-To use this template, your computer needs:
+#### Tradeoffs
+The major tradeoff was using a project template for the project.
+I generally start from scratch by setting up preprocessors,
+transpilers, and other build processes to match the needs of
+the project.
 
-- [NodeJS](https://nodejs.org/en/) (Version 6 only, Tested with 6.11.4)
-- [Git](https://git-scm.com/)
-
-### Setup
-
-To set up the template, first download it.
-
-Then open the folder in your command line, and install the needed dependencies:
-
-```bash
-cd projectName
-yarn
-```
-
-Now `cd` to your project name and run `npm start` or `foundation watch` to run Gulp. Your finished site will be created in a folder called `dist`, viewable at this URL:
-
-```
-http://localhost:8000
-```
-
-To create compressed, production-ready assets, run `npm run build` or `foundation build`.
-
----
-
-# Panini Helpers
-
-We've added a Panini helpers for per-page or per-layout styles.
-
-[SEE EXAMPLE](http://notebooks.zurb.com/posts/10139362?t=f9b74287fe3ac074)
-
----
-
-# Mixins
-
-We've added a few handy mixins for maintainable repeated code and faster development:
-
-### Avatar
-
-### Container Border
-
-### Flex Mixins
-
----
-
-# Additional Project Dependencies
-
-The following dependencies are at your disposal:
-
-### SVG Injector
-
-Inject an SVG by using an `img` tag with the `.inject-me` class like so:
-
-`<img src="{{root}}assets/img/think.svg" class="inject-me" alt="think icon">`
-
-### Slick Carousel
-
-### AOS (Animate on Scroll)
-
-### Tablesaw
+#### Additional Dev Time Features
+* Design
+* Custom build system
+* Use of Navigator JS API to locate users devices.
+* Weather icons
+* Use of Geolocation API to obtain better locations for better results from OpenWeatherMap
+* Change backround based on current weather conditions.
