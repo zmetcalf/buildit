@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import moment from 'moment';
 import _ from 'lodash';
 
 const WEATHER_API_KEY = '2fa8331228125104dfc0478c0e13d10a';
@@ -71,22 +72,13 @@ export default {
     },
 
     getHour(dt) {
-      return (new Date(dt * 1000)).toLocaleDateString(
-      'en-US',
-      {
-        hour: 'numeric',
-        hour12: true,
-      })
-      .split(', ')[1];
+      return moment(dt * 1000).format('h a');
     },
 
     setWeather(list) {
-      this.weather = _.groupBy(list, item => (new Date(item.dt * 1000)).toLocaleDateString(
-        'en-US',
-        {
-          weekday: 'long',
-        })
-      );
+      this.weather = _.groupBy(list, item =>
+				moment(item.dt * 1000).format('dddd'));
+			return this.weather; // For tests
     },
 
     getWeatherStatus(item) {

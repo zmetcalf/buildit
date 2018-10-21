@@ -9,7 +9,7 @@ import Foundation from 'foundation-sites';
 
 import WeatherComponent from './WeatherComponent';
 
-var vm = new Vue({
+const vm = new Vue({
   el: '#app',
   render(h) {
     return h("div", [h(WeatherComponent)])
